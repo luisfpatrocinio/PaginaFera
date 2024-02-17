@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'pixel-font', 'sans-serif';
+}
+
+@font-face {
+    font-family: 'pixel-font';
+    src: url("../assets/fonts/minecraft-font/MinecraftRegular-Bmg3.otf");
+}
+
+#header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+
+    .header-title {
+        font-size: 2rem;
+        text-align: center;
+        @media (max-width: 600px){
+            font-size: 1.5rem;
+        }
+    }
+
+    .header-search {
+        display: flex;
+        flex-direction: row;
+
+        input {
+            padding: .5rem;
+        }
+
+        button {
+            padding: .5rem;
+            background-color: rgb(49, 40, 40);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+
+
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+}
+
+
+.person-card{
+    border: 4px solid rgb(49, 40, 40);
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+
+
+    .card-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+        padding: 1rem;
+        
+        & h2 {
+            text-align: center;
+        }
+    
+        & img {
+            width: 80%;
+            border-radius: 25%;
+            padding: 1rem;
+
+        } @media (max-width: 600px){
+            font-size: 1rem;
+            
+        }
+    
+    }
+
+
+    .card-content {
+        height: 40%;
+        padding: 1%;
+    
+        & p {
+            font-size: 1rem;
+            text-align: center;
+        }
+    
+    }
+
+
+}
+
+.person-card:hover {
+    background-color: rgb(49, 40, 40);
+    color: white;
+    cursor: pointer;
+    scale: 1.1;
+}
+
+
+#people-grid {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(3, minmax(200px, 1fr));
+
+    grid-gap: 1rem;
+    padding: 1rem;
+    border-radius: 25px;
+
+    @media (max-width: 1000px) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        
+    }
+   
+   
+}
