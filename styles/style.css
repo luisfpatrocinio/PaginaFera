@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     font-family: 'pixel-font', 'sans-serif';
+    box-sizing: border-box;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
 }
 
 #header {
+    border: solid blue 1px;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -18,27 +20,12 @@
     width: 100vw;
 
     .header-title {
+        padding: 1rem;
         font-size: 2rem;
         text-align: center;
+
         @media (max-width: 600px){
             font-size: 1.5rem;
-        }
-    }
-
-    .header-search {
-        display: flex;
-        flex-direction: row;
-
-        input {
-            padding: .5rem;
-        }
-
-        button {
-            padding: .5rem;
-            background-color: rgb(49, 40, 40);
-            color: white;
-            border: none;
-            cursor: pointer;
         }
     }
 }
@@ -56,10 +43,11 @@
 .person-card{
     border: 4px solid rgb(49, 40, 40);
     border-radius: 1rem;
-    padding: 1rem;
+    padding: .5rem;
     background-color: aqua;
     display: flex;
     flex-direction: column;
+    transition: 100ms;
 
 
     .card-header {
@@ -67,8 +55,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 80%;
-        padding: 1rem;
+        height: 100%;
+        transition: inherit;
         
         & h2 {
             text-align: center;
@@ -83,18 +71,40 @@
             font-size: 1rem;
             
         }
-    
     }
 
 
     .card-content {
-        height: 40%;
-        padding: 1%;
+        visibility: hidden;
+        height: 0%;
+        padding: 1rem;
+        transition: inherit;
+
+        overflow-y: scroll;
+        overflow-x: hidden;
     
         & p {
             font-size: 1rem;
             text-align: center;
         }
+
+        & h3 {
+            text-align: center;
+
+        }
+
+        .card-list {
+            list-style: none;
+            padding: 1rem;
+        }
+        .card-list li{
+            width: 100%;
+            background: white;
+            padding: 1rem;
+            margin-bottom: .5rem;
+            border-radius: 10px;
+        }
+    
     
     }
 
@@ -102,27 +112,81 @@
 }
 
 .person-card:hover {
-    background-color: rgb(49, 40, 40);
-    color: white;
     cursor: pointer;
+    margin: 10px;
     scale: 1.1;
+    padding: .5rem;
+
+    .card-title {
+        height: 100%;
+    }
+    .card-content{
+        height: 60%;
+        visibility: visible;
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background: #555;
+        width: 20px;
+    }
+
+    @media (max-width: 1000px){
+        .person-card {
+            padding: 0%;
+        }
+        .card-header {
+            transition: 0ms;
+            visibility: hidden;
+            height: 0%;
+            padding: 0%;
+        }
+        .card-content{
+            padding: 0%;
+            height: 100%;
+            width: 100%;
+            visibility: visible;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px
+          }
+    }
+
+    
 }
 
 
 #people-grid {
-    width: 60%;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
-    grid-template-rows: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(3, minmax(500px, 40vw));
 
     grid-gap: 1rem;
     padding: 1rem;
     border-radius: 25px;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 900px) {
+        width: 90%;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        
     }
    
    
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 16px
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f100;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background: #88888800;
+}
+
