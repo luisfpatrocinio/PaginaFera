@@ -17,8 +17,10 @@ const nois = [
             "title" : "Hobbies", "content" : ["Jogar volei", "Consumir bebidas"]
         }
     ],
-    "fotoUrl" : "https://www.w3schools.com/howto/img_avatar.png",
-    "dataNasc" : "2000-01-01"
+    "fotoUrl" : "../assets/images/patro_back.jpeg",
+    "fotoUrlFront" : "../assets/images/patro_front.jpeg",
+    "dataNasc" : "2000-01-01",
+    "key": "patro"
     },
 
     {
@@ -31,8 +33,10 @@ const nois = [
                 "title" : "Hobbies", "content" : ["Fazer programas"]
             },
         ],
-        "fotoUrl" : "https://www.w3schools.com/howto/img_avatar.png",
-        "dataNasc" : "2000-01-01"
+        "fotoUrl" : "../assets/images/ryan_back.jpeg",
+        "fotoUrlFront" : "../assets/images/ryan_front.jpeg",
+        "dataNasc" : "2000-01-01",
+        "key": "ryan"
     },
 
     {
@@ -45,13 +49,30 @@ const nois = [
                 "title" : "Hobbies", "content" : ["Fazer programas"]
             },
         ],
-        "fotoUrl" : "https://www.w3schools.com/howto/img_avatar.png",
-        "dataNasc" : "2000-01-01"
+        "fotoUrl" : "../assets/images/herminio_back.jpeg",
+        "fotoUrlFront" : "../assets/images/herminio_front.jpeg",
+        "dataNasc" : "2000-01-01",
+        "key": "herminio"
     }
 ]
 
 function criarCards() {
     nois.forEach(pessoa => criarCard(pessoa))
+
+    const cardHeaders = document.getElementsByClassName('person-card');
+    for (let i = 0; i < cardHeaders.length; i++) {
+        cardHeaders[i].addEventListener('mouseover', function() {
+            const img = this.querySelector('img');
+            const id = img.getAttribute('id');
+            img.src = `../assets/images/${id}_front.jpeg`;
+        });
+
+        cardHeaders[i].addEventListener('mouseout', function() {
+            const img = this.querySelector('img');
+            const id = img.getAttribute('id');
+            img.src = `../assets/images/${id}_back.jpeg`;
+        });
+    }
 }
 
 
@@ -66,18 +87,15 @@ function criarCard(pessoa) {
     alunoCard.appendChild(cardHeader);
     alunoCard.appendChild(cardBody);
 
+    // atribuir foto padrão caso nao encontre
     const fotoAluno = pessoa.fotoUrl ? pessoa.fotoUrl : 'https://www.w3schools.com/howto/img_avatar.png';
     const dataNasc = pessoa.dataNasc ? pessoa.dataNasc : 'não informada';
 
-
-    cardHeader.innerHTML = `<img src="${fotoAluno}" alt="Foto de ${pessoa.nome}" class="person-photo">  <h2>${pessoa.nome}</h2>`;
+    cardHeader.innerHTML = `<img id="${pessoa.key}" src="${fotoAluno}" alt="Foto de ${pessoa.nome}" class="person-photo">  <h2>${pessoa.nome}</h2>`;
     cardBody.innerHTML = `<div class="card-bar"> </div>`
     cardBody.innerHTML += `<p>Data de nascimento: ${formatarDAtaDeNascimento(dataNasc)} </p>`;
 
     criarTopicos(pessoa.topicos, cardBody)
-
-
-
 }
 
 function criarTopicos(topicos, cardBody) {
@@ -123,18 +141,7 @@ function formatarDAtaDeNascimento(data) {
 
 
 
-// SCRIPT COMENTADO PARA ANIMAR O GIF DE PERFIL AO PASSAR O MOUSE
-document.querySelectorAll('.member img').forEach(img => {
-    img.addEventListener('mouseenter', () => {
-        img.src = "assets/profileGif.gif";
-        img.style.animationIterationCount = '1';
-    });
 
-    // Reiniciar a animação ao sair do mouse
-    img.addEventListener('mouseleave', () => {
-        img.src = "assets/profileFirstFrame.gif"
-    });
-});
 
 
 function createElementWithClassName(tagName, className) { 
