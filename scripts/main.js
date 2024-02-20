@@ -9,13 +9,12 @@ const nois = [
     "nome" : "Patrocinio",
     "topicos" : [
         {
-            "title" : "Redes Sociais", "content" : ["Instagram", "Facebook"]
+            "title" : "Redes Sociais", 
+            "content" : ["Github: luisfpatrocinio", "X: @patrocinioluisf", "Linkedin: luisfpatrocinio", "Itch.io: patrocinioluisf", "Discord", "Steam"], 
+            "links" : ["https://github.com/luisfpatrocinio/", "https://twitter.com/patrocinioluisf", "https://linkedin.com/in/luisfpatrocinio/", "https://patrocinioluisf.itch.io/", "https://discordapp.com/users/256614318571782154/", "https://steamcommunity.com/id/patrocinioluisf/"]
         },
         {
             "title" : "Hobbies", "content" : ["Jogar volei", "Consumir bebidas"]
-        },
-        {
-            "title" : "Coisas que faz escondido", "content" : ["Bate Masturbacao"]
         }
     ],
     "fotoUrl" : "https://www.w3schools.com/howto/img_avatar.png",
@@ -23,21 +22,32 @@ const nois = [
     },
 
     {
-        "nome" : "Patrocinio",
+        "nome" : "Ryan",
         "topicos" : [
             {
-                "title" : "Redes Sociais", "content" : ["Instagram", "Facebook"]
+                "title" : "Redes Sociais", "content" : ["Instagram: @ryofac", "Linkedin: Ryan Faustino"], "links" : ["https://www.instagram.com/ryofac/", "https://www.linkedin.com/in/ryan-faustino-b94b57269/"]
             },
             {
-                "title" : "Hobbies", "content" : ["Jogar volei", "Consumir bebidas"]
+                "title" : "Hobbies", "content" : ["Fazer programas"]
             },
-            {
-                "title" : "Coisas que faz escondido", "content" : ["Bate Masturbacao"]
-            }
         ],
         "fotoUrl" : "https://www.w3schools.com/howto/img_avatar.png",
         "dataNasc" : "2000-01-01"
-        }
+    },
+
+    {
+        "nome" : "Hermínio",
+        "topicos" : [
+            {
+                "title" : "Redes Sociais", "content" : ["Instagram: @ryofac", "Linkedin: Ryan Faustino"], "links" : ["https://www.instagram.com/ryofac/", "https://www.linkedin.com/in/ryan-faustino-b94b57269/"]
+            },
+            {
+                "title" : "Hobbies", "content" : ["Fazer programas"]
+            },
+        ],
+        "fotoUrl" : "https://www.w3schools.com/howto/img_avatar.png",
+        "dataNasc" : "2000-01-01"
+    }
 ]
 
 function criarCards() {
@@ -61,7 +71,8 @@ function criarCard(pessoa) {
 
 
     cardHeader.innerHTML = `<img src="${fotoAluno}" alt="Foto de ${pessoa.nome}" class="person-photo">  <h2>${pessoa.nome}</h2>`;
-    cardBody.innerHTML = `<p>Data de nascimento: ${formatarDAtaDeNascimento(dataNasc)} </p>`;
+    cardBody.innerHTML = `<div class="card-bar"> </div>`
+    cardBody.innerHTML += `<p>Data de nascimento: ${formatarDAtaDeNascimento(dataNasc)} </p>`;
 
     criarTopicos(pessoa.topicos, cardBody)
 
@@ -81,7 +92,21 @@ function criarTopicos(topicos, cardBody) {
 
         cardBody.appendChild(listaDePontos);
 
-        topico.content.forEach(ponto => listaDePontos.innerHTML += `<li> ${ponto} </li>`)
+        for (let i = 0; i < topico.content.length; i++) {
+            const ponto = topico.content[i];
+
+            // Colocar links caso haja
+            if (topico.links) {
+                let className = "link-topic"
+                listaDePontos.innerHTML += `<li class="${className}" onclick="window.open('${topico.links[i]}', '_blank');" > ${ponto} </li>`
+            }
+            else {
+                listaDePontos.innerHTML += `<li> ${ponto} </li>`
+            }
+
+            
+
+        }
 
         
 

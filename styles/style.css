@@ -13,7 +13,7 @@ body {
     background-position: fixed;
     background-repeat: round;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: visible;
 }
 
 @font-face {
@@ -32,8 +32,6 @@ body {
     padding: 1rem;
 
     .header-title {
-        border: #070F2B solid;
-        background-color: #070F2B;
         border-radius: 1rem;
         padding: 1rem;
         font-size: 2rem;
@@ -63,7 +61,7 @@ body {
     width: 100%;
     height: 100%;
     background-image: url('../assets/images/stars.png'); /* Adiciona a imagem de estrelas */
-    animation: moveStars 500s linear infinite; /* Define a animação das estrelas */
+    animation: moveStars 100s linear infinite; /* Define a animação das estrelas */
 }
 
 
@@ -84,7 +82,7 @@ body {
     background-color: #070f2b77;
     display: flex;
     flex-direction: column;
-    transition: 100ms;
+    transition: all 300ms;
 
     .card-header {
         display: flex;
@@ -113,6 +111,8 @@ body {
 
 
     .card-content {
+        display: flex;
+        flex-direction: column;
         visibility: hidden;
         height: 0%;
         padding: 1rem;
@@ -134,16 +134,54 @@ body {
 
         }
 
+        .card-bar {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            width: 40%;
+            border-top: 3px dotted #9290C3;
+            align-self: center;
+        }
+
         .card-list {
             list-style: none;
             padding: 1rem;
         }
         .card-list li{
             width: 100%;
-            background: white;
+            background-color: white;
             padding: 1rem;
             margin-bottom: .5rem;
             border-radius: 10px;
+        }
+
+        .card-topic {
+            color: #9290C3;
+        }
+
+        .link-topic {
+            text-align: center;
+        }
+
+        .link-topic-instagram {
+            background-color: #c13584;
+        
+        }
+        
+        .link-topic-linkedin {
+            background: #0A66C2;
+        }
+        
+        .link-topic-steam {
+            background-color: #1b2838;
+        
+        }
+        
+        .link-topic:hover {
+            color: whitesmoke;
+            background-color: #9290C3;
+            cursor: pointer;
+            transform: scale(1.1);
+            animation: wave 1000ms infinite ease-in-out;
         }
     
     
@@ -154,11 +192,12 @@ body {
 
 .person-card:hover {
     background-color: #070f2b;
-    cursor: pointer;
     scale: 1.1;
     padding: .5rem;
+    height: 110%;
 
     .card-header {
+        transform: scale(0.8);
         height: 70%;
     }
     .card-content{
@@ -203,7 +242,7 @@ body {
 
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
-    grid-template-rows: repeat(3, 600px);
+    grid-template-rows: repeat(1, 600px);
     grid-gap: 36px;
     border-radius: 25px;
 
@@ -220,7 +259,7 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 16px
+    width: 16px;
   }
   
   /* Track */
@@ -234,14 +273,20 @@ body {
     background: #88888800;
 }
 
+::-webkit-scrollbar-thumb{
+    background: #55555500;
+    width: 20px;
+}
+
+
 
 @keyframes wave {
     0% {
-        transform: translateY(50px);
+        transform: scale(1);
     }
     50% {
-        transform: translateY(0px);
+        transform: scale(1.1);
     } 100% {
-        transform: translateY(50px);
+        transform: scale(1);
     }
 }
