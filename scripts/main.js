@@ -14,12 +14,12 @@ const nois = [
             "links" : ["https://github.com/luisfpatrocinio/", "https://twitter.com/patrocinioluisf", "https://linkedin.com/in/luisfpatrocinio/", "https://patrocinioluisf.itch.io/", "https://discordapp.com/users/256614318571782154/", "https://steamcommunity.com/id/patrocinioluisf/"]
         },
         {
-            "title" : "Hobbies", "content" : ["Jogar volei", "Consumir bebidas"]
+            "title" : "Hobbies", "content" : ["Fazer programas", "Jogar volei", "Consumir bebidas", "Fazer joguinhos"]
         }
     ],
     "fotoUrl" : "../assets/images/patro_back.jpeg",
     "fotoUrlFront" : "../assets/images/patro_front.jpeg",
-    "dataNasc" : "2000-01-01",
+    "dataNasc" : "1995-09-25",
     "key": "patro"
     },
 
@@ -30,12 +30,12 @@ const nois = [
                 "title" : "Redes Sociais", "content" : ["Instagram: @ryofac", "Linkedin: Ryan Faustino"], "links" : ["https://www.instagram.com/ryofac/", "https://www.linkedin.com/in/ryan-faustino-b94b57269/"]
             },
             {
-                "title" : "Hobbies", "content" : ["Fazer programas"]
+                "title" : "Hobbies", "content" : ["Fazer programas", "Consumir cafézinho", "Escutar um rockzinho"]
             },
         ],
         "fotoUrl" : "../assets/images/ryan_back.jpeg",
         "fotoUrlFront" : "../assets/images/ryan_front.jpeg",
-        "dataNasc" : "2000-01-01",
+        "dataNasc" : "2005-08-19",
         "key": "ryan"
     },
 
@@ -43,15 +43,15 @@ const nois = [
         "nome" : "Hermínio",
         "topicos" : [
             {
-                "title" : "Redes Sociais", "content" : ["Instagram: @ryofac", "Linkedin: Ryan Faustino"], "links" : ["https://www.instagram.com/ryofac/", "https://www.linkedin.com/in/ryan-faustino-b94b57269/"]
+                "title" : "Redes Sociais", "content" : ["Github: herminioneto", "Linkedin: Hermínio Neto"], "links" : ["https://www.github.com/herminioneto/", "https://www.linkedin.com/in/herminio-neto/"]
             },
             {
-                "title" : "Hobbies", "content" : ["Fazer programas"]
+                "title" : "Hobbies", "content" : ["Fazer programas", "Jogar um lolzinho", "Tomar um cafézinho"]
             },
         ],
         "fotoUrl" : "../assets/images/herminio_back.jpeg",
         "fotoUrlFront" : "../assets/images/herminio_front.jpeg",
-        "dataNasc" : "2000-01-01",
+        "dataNasc" : "2000-11-26",
         "key": "herminio"
     }
 ]
