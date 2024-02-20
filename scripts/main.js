@@ -27,10 +27,10 @@ const nois = [
         "nome" : "Ryan",
         "topicos" : [
             {
-                "title" : "Redes Sociais", "content" : ["Instagram: @ryofac", "Linkedin: Ryan Faustino"], "links" : ["https://www.instagram.com/ryofac/", "https://www.linkedin.com/in/ryan-faustino-b94b57269/"]
+                "title" : "Redes Sociais", "content" : ["Github", "Instagram: @ryofac", "Linkedin: Ryan Faustino"], "links" : ["https://github.com/ryofac/", "https://www.instagram.com/ryofac/", "https://www.linkedin.com/in/ryan-faustino-b94b57269/"]
             },
             {
-                "title" : "Hobbies", "content" : ["Fazer programas", "Consumir cafézinho", "Escutar um rockzinho"]
+                "title" : "Hobbies", "content" : ["Fazer programas em Java >_<", "Consumir cafézinho", "Escutar um rockzinho"]
             },
         ],
         "fotoUrl" : "../assets/images/ryan_back.jpeg",
