@@ -10,8 +10,8 @@ const nois = [
     "topicos" : [
         {
             "title" : "Redes Sociais", 
-            "content" : ["Github: luisfpatrocinio", "X: @patrocinioluisf", "Linkedin: luisfpatrocinio", "Itch.io: patrocinioluisf", "Discord", "Steam"], 
-            "links" : ["https://github.com/luisfpatrocinio/", "https://twitter.com/patrocinioluisf", "https://linkedin.com/in/luisfpatrocinio/", "https://patrocinioluisf.itch.io/", "https://discordapp.com/users/256614318571782154/", "https://steamcommunity.com/id/patrocinioluisf/"]
+            "content" : ["Black Hole Games", "Github: luisfpatrocinio", "X: @patrocinioluisf", "Linkedin: luisfpatrocinio", "Itch.io: patrocinioluisf", "Discord", "Steam"], 
+            "links" : ["https://www.blackhole.games/", "https://github.com/luisfpatrocinio/", "https://twitter.com/patrocinioluisf", "https://linkedin.com/in/luisfpatrocinio/", "https://patrocinioluisf.itch.io/", "https://discordapp.com/users/256614318571782154/", "https://steamcommunity.com/id/patrocinioluisf/"]
         },
         {
             "title" : "Hobbies", "content" : ["Fazer programas", "Jogar volei", "Consumir bebidas", "Fazer joguinhos"]
