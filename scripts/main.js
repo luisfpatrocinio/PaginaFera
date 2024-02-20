@@ -1,4 +1,6 @@
 
+
+// Assim que a janela
 window.onload = criarCards
 
 
@@ -79,7 +81,7 @@ function criarTopicos(topicos, cardBody) {
 
         cardBody.appendChild(listaDePontos);
 
-        topico.content.forEach(ponto => listaDePontos.innerHTML = `<li> ${ponto} </li>`)
+        topico.content.forEach(ponto => listaDePontos.innerHTML += `<li> ${ponto} </li>`)
 
         
 
