@@ -1,8 +1,18 @@
 *{
-    padding: 0;
-    margin: 0;
+    padding: 0%;
+    margin: 0%;
     font-family: 'pixel-font', 'sans-serif';
     box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/assets/images/main_title_bg.png");
+    background-size: cover;
+    background-repeat: repeat-y;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 @font-face {
@@ -11,15 +21,19 @@
 }
 
 #header {
-    border: solid blue 1px;
+    color: #9290C3;
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100vw;
+    padding: 1rem;
 
     .header-title {
+        border: #070F2B solid;
+        background-color: #070F2B;
+        border-radius: 1rem;
         padding: 1rem;
         font-size: 2rem;
         text-align: center;
@@ -40,15 +54,16 @@
 }
 
 
-.person-card{
+
+
+.person-card {
     border: 4px solid rgb(49, 40, 40);
     border-radius: 1rem;
     padding: .5rem;
-    background-color: aqua;
+    background-color: rgba(73, 81, 88, 0.603);
     display: flex;
     flex-direction: column;
     transition: 100ms;
-
 
     .card-header {
         display: flex;
@@ -57,6 +72,7 @@
         align-items: center;
         height: 100%;
         transition: inherit;
+        color: antiquewhite;
         
         & h2 {
             text-align: center;
@@ -68,6 +84,7 @@
             padding: 1rem;
 
         } @media (max-width: 600px){
+            padding: 1rem;
             font-size: 1rem;
             
         }
@@ -89,6 +106,7 @@
         }
 
         & h3 {
+            color: antiquewhite;
             text-align: center;
 
         }
@@ -113,7 +131,6 @@
 
 .person-card:hover {
     cursor: pointer;
-    margin: 10px;
     scale: 1.1;
     padding: .5rem;
 
@@ -158,17 +175,20 @@
 
 #people-grid {
     width: 80%;
+    height: 80%;
+
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
-    grid-template-rows: repeat(3, minmax(500px, 40vw));
-
-    grid-gap: 1rem;
-    padding: 1rem;
+    grid-template-rows: repeat(3, 600px);
+    grid-gap: 36px;
     border-radius: 25px;
 
+
     @media (max-width: 900px) {
-        width: 90%;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        width: 80%;
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+        row-gap: 50px;
+
     }
    
    
@@ -190,3 +210,14 @@
     background: #88888800;
 }
 
+
+@keyframes wave {
+    0% {
+        transform: translateY(50px);
+    }
+    50% {
+        transform: translateY(0px);
+    } 100% {
+        transform: translateY(50px);
+    }
+}
